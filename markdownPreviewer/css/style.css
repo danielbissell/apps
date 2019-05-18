@@ -1,0 +1,36 @@
+
+body {
+  background: lightgray;
+}
+.markDown{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin: 0px 100px 0px 100px;
+  width: 100%;
+}
+
+.editor{
+height: 250px;
+  width: 80%;
+  overflow-wrap: break-word;
+  margin: 0px 0px 10px 0px;
+}
+
+
+
+.display{
+  font-family: Roboto;
+  font-size: 15px;
+  height: auto;
+  background: lightblue;
+  text-align: left;
+    overflow-wrap: break-word;
+  width: 80%;
+}
+.title{
+text-align: center;
+ background: #C0C0C0;
+  font-size: 25px;
+}
