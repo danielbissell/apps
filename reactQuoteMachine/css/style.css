@@ -1,0 +1,41 @@
+html {
+  background-color: lightblue;
+    margin: auto;
+
+}
+.display{
+
+}
+
+.main {
+
+}
+
+.quoteMachine{
+  border: solid black;
+  background-color: #D6F0EA;
+  min-width: 200px;
+  max-width: 500px;
+  min-height: 190px;
+    padding: 15px;
+}
+.quoteBtn {
+margin: auto;
+float: right;
+}
+
+.btnLink {
+    font-style: italic;
+  text-decoration: none;
+  
+}
+
+.boxFooter{
+  display: block;
+  margin-top: 60px;
+
+}
+.imgTwitter {
+  height: 70px;
+   width: 70px;
+}
