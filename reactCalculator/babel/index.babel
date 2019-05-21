@@ -1,0 +1,109 @@
+
+class App extends React.Component {
+  constructor(props) {
+  super(props);
+  this.state = {
+   currentValue: '',
+   answer: 0,
+   exp: 0, //can probably delete once done
+   answerStatus: 'formula',
+   firstChar: true,
+  };
+    
+   //   let value = 0;
+    
+    
+  }
+  
+  stringify = (x) => {
+    
+      var last = this.state.currentValue.charAt(this.state.currentValue.length-1);
+      var current = x.target.value;
+      console.log(last, current);
+//    if(current == last && x.target.value == '/' | x.target.value == '+' | x.target.value == '-' | x.target.value == '*') {console.log(last, current, " Samzies");}
+    
+   if(this.state.firstChar == true && x.target.value == 0 | x.target.value == '/' | x.target.value == '+' | x.target.value == '-' | x.target.value == '*')  
+   {console.log(x.target.value, this.state.firstChar) } 
+    
+    else {  if(current == '/' |  current == '+' |current == '-' | current == '*' && last == '/' | last == '+' | last == '-' | last == '*'  )            {console.log(last, current, " Samzies")} 
+          
+          else {
+            
+             this.setState({
+              currentValue: (this.state.currentValue + x.target.value), 
+              answerStatus: 'formula',
+              firstChar: false,
+            });
+     }//end second
+                                                              }//end first if
+
+  };
+
+  evaluate = (x) => {
+    this.setState({
+     answer:  eval(this.state.currentValue),
+      currentValue: '',
+      answerStatus: 'answer', 
+      firstChar: true,
+    });
+  }
+  
+    clear = (x) => {
+    this.setState({
+      currentValue: '', 
+      answerStatus: 'formula', 
+      firstChar: true,
+    });
+  }
+  
+
+  render(){
+    return (
+      <div>
+        <h1 style={{textAlign: 'center'}}>React Calculator</h1>
+        <div className="calculator">
+          
+            <div className="display">
+            {/*  <h2> display: {this.state.currentValue}</h2>
+              <h2> answer: {this.state.answer}</h2>  */}
+<h2>{(this.state.answerStatus == 'formula') ? <p> {this.state.currentValue} </p> : <p> {this.state.answer}</p>}</h2> 
+            </div>
+          
+          <div className="buttons">
+            
+           <div className="calcBtn">
+             <button onClick={this.stringify} value={1}>1</button>
+             <button onClick={this.stringify} value={2}>2</button>
+             <button onClick={this.stringify} value={3}>3</button>
+                <button className="mathBtn" onClick={this.stringify}  value="+">+</button>
+           </div>
+           <div className="calcBtn">
+             <button onClick={this.stringify} value={4}>4</button>
+             <button onClick={this.stringify} value={5}>5</button>
+             <button onClick={this.stringify} value={6}>6</button>  
+                 <button className="mathBtn" onClick={this.stringify}  value="-">-</button> 
+           </div>
+           <div className="calcBtn">
+             <button onClick={this.stringify} value={7}>7</button>
+             <button onClick={this.stringify} value={8}>8</button>
+             <button onClick={this.stringify} value={9}>9</button>  
+                <button className="mathBtn" onClick={this.stringify}  value="*">x</button>
+           </div>
+           <div className="calcBtn">
+             <button onClick={this.stringify} value={0}>0</button>
+                 <button className="mathBtn" onClick={this.stringify} value=".">.</button>
+                 <button className="mathBtn" onClick={this.stringify}  value="/">/</button> 
+                 <button className="mathBtn" onClick={this.clear}  value="C">C</button>
+                 <button className="evalBtn" onClick={this.evaluate}>=</button>
+           </div>
+         </div>
+
+      </div>
+      </div>
+
+     );
+    };//end render
+}// end App
+
+         
+ReactDOM.render(<App />, document.getElementById("root"));

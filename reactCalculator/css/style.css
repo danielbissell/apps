@@ -1,0 +1,45 @@
+
+.calcBtn {
+  padding: 5px;
+  
+}
+.calculator{
+ width: 300px;
+  margin: auto;
+  padding: 0px;
+  border: solid black;
+  
+}
+.buttons{
+  background-color: #101010;
+  text-align: center;
+  border: none;
+  
+}
+button {
+  margin: 0px 2px 0px 2px;
+  height: 60px;
+  width: 60px;
+  border: none;
+  font-size: 20px;
+    font-family: roboto;
+  border-radius: 50%;
+  background-color: gray;
+}
+
+.evalBtn{
+  background-color: orange;
+  border: orange;
+  border-radius: 5%;
+  margin: 10px 0px 0px 0px;
+  width: 70%;
+}
+.mathBtn{
+  background-color: #A9A9A9;
+}
+.display{
+  font-family: Roboto;
+  font-size: 20px;
+  height: 30px;
+  text-align: right;
+}
