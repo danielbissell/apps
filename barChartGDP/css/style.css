@@ -1,0 +1,55 @@
+body{
+  background: white;
+}
+
+.container{
+    display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin-left: 100px;
+}
+
+.chart {
+  font: 10px sans-serif;
+  text-align: center;
+  padding: 2px;
+  margin: 1px;
+  color: gray;
+ 
+}
+/******** Tooltip *********/
+
+#tooltip {
+  position: absolute;
+  display: none;
+  min-width: 80px;
+  height: auto;
+  background: none repeat scroll 0 0 rgba(31, 31, 31, 0.6);
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 14px;
+  text-align: left;
+  color: #fff;
+  box-shadow: 1px 1px 20px rgba(31, 31, 31, 0.6);
+}
+
+svg rect:hover {
+    fill: white;
+}
+text{
+  font-size: 10px;
+    font-style: italic;
+}
+#title{
+font: 20px sans-serif;
+ // background-color: lightblue;
+  text-align: center;
+  padding: 3px;
+  margin: 1px;
+  color: gray;
+}
+svg {
+  background-color: white;
+  box-shadow: 0 0 10px #888888;
+}
